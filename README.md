@@ -5,5 +5,5 @@
 </div>
 
 ## About 
-
-Basic exercises for practicing JavaScript.
+ 
+I took on this project to improve my **JavaScript** skills, there is potential for refining its visual aspects in the future.
