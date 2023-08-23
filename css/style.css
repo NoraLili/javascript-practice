@@ -23,8 +23,7 @@
 
 .center {
     display: flex;
-    align-items:center;
-    justify-content: center;
+    align-items: center;
 }
 
 .exercise-title {
@@ -32,49 +31,46 @@
     margin: auto;
 }
 
-.exercise-description {
+.exercise-description,
+.solution-str {
     margin: 0;
+    padding: 0px 15px 0px 10px;
     text-align: left;
-    padding: 0px 10px;
 }
 
 .button {
     margin: auto;
-    background-color:hsl(101, 34%, 52%);
-    background:linear-gradient(to bottom, hsl(101, 34%, 52%) 5%, hsl(101, 38%, 47%) 100%);
-    color:black;
-    font-family:Arial;
-	font-size:16px;
-	font-weight:bold;
-    text-decoration:none;
-	text-shadow:2px 2px 5px hsla(102, 41%, 66%, 0.4);
-    border-radius:12px;
+    background: linear-gradient(to bottom, hsl(101, 34%, 52%) 5%, hsl(101, 38%, 47%) 100%);
+    color: black;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 2px 2px 5px hsla(102, 41%, 66%, 0.4);
+    border-radius: 12px;
     border: 1px solid hsla(102, 41%, 66%, 0.4);
-	box-shadow: 3px 5px 6px 1px hsla(102, 41%, 66%, 0.4);
-	cursor:pointer;
+    box-shadow: 3px 5px 6px 1px hsla(102, 41%, 66%, 0.4);
+    cursor: pointer;
 }
 
 .solution-str {
-    margin: auto;
-    text-align: left;
     font-style: italic;
-    padding: 0px 10px;
 }
 
 @media (max-width: 575.98px) {
-    .exercise-title {
+
+    .exercise-title,
+    .solution-button-div {
         padding: 15px 0px 0px 0px;
     }
 
     .exercise-description {
         padding: 15px 15px 0px 15px;
-    }
-
-    .solution-button-div {
-        padding: 15px 0px 0px 0px;
+        text-align: justify;
     }
 
     .solution-str {
-        padding: 15px 15px 15px 15px;
+        padding: 15px;
+        text-align: justify;
     }
 }
