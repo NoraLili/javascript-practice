@@ -87,3 +87,46 @@ function printAverage() {
     alert(result);
     document.getElementById(`solution-4`).innerHTML = result;
 }
+
+// Exercise 5
+function printWelcome() {
+    let firstName = prompt(`Please enter your first name!`);
+    let lastName = prompt(`Please enter your last name!`);
+    let result = `Welcome ${firstName} ${lastName}! :)`
+    alert(result);
+    document.getElementById(`solution-5`).innerHTML = result;
+}
+
+// Exercise 6
+function calculateSum(number1, number2) {
+    return number1 + number2;
+}
+
+function printSum() {
+    let firstRequestedNumber = Number(prompt(`Please enter an number!`));
+    let secondRequestedNumber = Number(prompt(`Please enter another number!`));
+    if (!validateInput(firstRequestedNumber) || !validateInput(secondRequestedNumber)) {
+        alert('You entered incorrect data! Please enter a number.');
+        return;
+    }
+    let result = `Your numbers are ${firstRequestedNumber} and ${secondRequestedNumber}, their sum is: ${calculateSum(firstRequestedNumber, secondRequestedNumber)}.`;
+    console.log(result);
+    document.getElementById(`solution-6`).innerHTML = result;
+}
+
+// Exercise 7
+function calculatePower(base, exponent) {
+    return Math.pow(base, exponent);
+}
+
+function printPower(){
+    let firstRequestedNumber = Number(prompt(`Please enter a base!`));
+    let secondRequestedNumber = Number(prompt(`Please enter an exponent!`));
+    if (!validateInput(firstRequestedNumber) || !validateInput(secondRequestedNumber)) {
+        alert('You entered incorrect data! Please enter a number.');
+        return;
+    }
+    let result = `Your base number is ${firstRequestedNumber} raised to the power of ${secondRequestedNumber}, the result of which is ${calculatePower(firstRequestedNumber, secondRequestedNumber)}.`;
+    alert(result);
+    document.getElementById(`solution-7`).innerHTML = result;
+}
