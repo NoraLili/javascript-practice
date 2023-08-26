@@ -56,7 +56,7 @@ function printSmallerBigger() {
     let firstRequestedNumber = Number(prompt(`Please enter an number!`));
     let secondRequestedNumber = Number(prompt(`Please enter another number!`));
     if (!validateInput(firstRequestedNumber) || !validateInput(secondRequestedNumber)) {
-        alert('You entered incorrect data! Please enter a number.');
+        alert('You entered an incorrect data! Please enter a number.');
         return;
     }
     let result = `Your numbers are ${firstRequestedNumber} and ${secondRequestedNumber} ${calculateSmallerBigger(firstRequestedNumber, secondRequestedNumber)}`;
@@ -79,7 +79,7 @@ function printAverage() {
         let requestedNumber = Number(prompt(`Please enter a number!`));
         arrayRequestedNumbers.push(requestedNumber);
         if (!validateInput(requestedNumber)) {
-            alert('You entered incorrect data! Please enter a number.');
+            alert('You entered an incorrect data! Please enter a number.');
             return;
         }
     }
@@ -106,7 +106,7 @@ function printSum() {
     let firstRequestedNumber = Number(prompt(`Please enter an number!`));
     let secondRequestedNumber = Number(prompt(`Please enter another number!`));
     if (!validateInput(firstRequestedNumber) || !validateInput(secondRequestedNumber)) {
-        alert('You entered incorrect data! Please enter a number.');
+        alert('You entered an incorrect data! Please enter a number.');
         return;
     }
     let result = `Your numbers are ${firstRequestedNumber} and ${secondRequestedNumber}, their sum is: ${calculateSum(firstRequestedNumber, secondRequestedNumber)}.`;
@@ -119,14 +119,140 @@ function calculatePower(base, exponent) {
     return Math.pow(base, exponent);
 }
 
-function printPower(){
+function printPower() {
     let firstRequestedNumber = Number(prompt(`Please enter a base!`));
     let secondRequestedNumber = Number(prompt(`Please enter an exponent!`));
     if (!validateInput(firstRequestedNumber) || !validateInput(secondRequestedNumber)) {
-        alert('You entered incorrect data! Please enter a number.');
+        alert('You entered an incorrect data! Please enter a number.');
         return;
     }
     let result = `Your base number is ${firstRequestedNumber} raised to the power of ${secondRequestedNumber}, the result of which is ${calculatePower(firstRequestedNumber, secondRequestedNumber)}.`;
     alert(result);
     document.getElementById(`solution-7`).innerHTML = result;
+}
+
+// Exercise 8
+function calculateSumOfSquares(number1, number2) {
+    return (Math.pow(number1, 2)) + (Math.pow(number2, 2));
+}
+
+function printSumOfSquares() {
+    let firstRequestedNumber = Number(prompt(`Please enter an number!`));
+    let secondRequestedNumber = Number(prompt(`Please enter another number!`));
+    if (!validateInput(firstRequestedNumber) || !validateInput(secondRequestedNumber)) {
+        alert('You entered an incorrect data! Please enter a number.');
+        return;
+    }
+    let result = `Your numbers are ${firstRequestedNumber} and ${secondRequestedNumber}, the sum of their squares is ${calculateSumOfSquares(firstRequestedNumber, secondRequestedNumber)}.`;
+    document.getElementById(`solution-8`).innerHTML = result;
+}
+
+// Exercise 9
+function calculateSquareRoot(number1) {
+    return Math.sqrt(number1);
+}
+
+function printSquareRoot() {
+    let requestedNumber = Number(prompt(`Please enter a not negative number!`));
+    if (!validateInput(requestedNumber) || requestedNumber < 0) {
+        alert('You entered an incorrect data! Please enter a not negative number.');
+        return;
+    }
+    let result = `Your number is: ${requestedNumber}, the square roots of it are ${calculateSquareRoot(requestedNumber)} or -${calculateSquareRoot(requestedNumber)}.`;
+    document.getElementById(`solution-9`).innerHTML = result;
+}
+
+// Exercise 10
+function calculateGrossPrice(netPrice, vatRatePersantage) {
+    let vatRate = vatRatePersantage / 100;
+    return (netPrice + (netPrice * vatRate));
+}
+
+function printGrossPrice() {
+    let netPrice = Number(prompt(`Please enter the net price of the product!`));
+    let vatRatePersantage = Number(prompt(`Please enter the VAT rate of the product (%) !`));
+    if (!validateInput(netPrice) || !validateInput(vatRatePersantage) || netPrice < 0 || vatRatePersantage < 0) {
+        alert('You entered an incorrect data! Please enter a not negative number.');
+        return;
+    }
+    let result = `The net price of your product is: ${netPrice}, the VAT rate of your product is: ${vatRatePersantage}%,  the gross price is: ${calculateGrossPrice(netPrice, vatRatePersantage)}.`;
+    document.getElementById(`solution-10`).innerHTML = result;
+}
+
+// Exercise 11
+function calculateConstrustTriangle(a, b, c) {
+    if (a + b > c && b + c > a && c + a > b) {
+        return `constructable`;
+    } else {
+        return `not constructable`;
+    }
+}
+
+function printConstrustTriangle() {
+    let aSide = Number(prompt(`Please enter a positive number!`));
+    let bSide = Number(prompt(`Please enter another positive number!`));
+    let cSide = Number(prompt(`Please enter another positive number!`));
+    if (!validateInput(aSide) || !validateInput(bSide) || !validateInput(cSide) || aSide <= 0 || bSide <= 0 || cSide <= 0) {
+        alert('You entered an incorrect data! Please enter a not negative number.');
+        return;
+    }
+    let result = `The sides of the triangle are: ${aSide}, ${bSide} and ${cSide}, therefor the triangle is ${calculateConstrustTriangle(aSide, bSide, cSide)}.`;
+    document.getElementById(`solution-11`).innerHTML = result;
+}
+
+// Exercise 12
+
+function printDiceRoll() {
+    let diceRoll = Math.floor(Math.random() * 6) + 1;
+    document.getElementById(`solution-12`).innerHTML = `The result of the dice roll is: ${diceRoll}.`;
+}
+
+// Exercise 13
+function generateRandomNumber(lowerLimit, upperLimit) {
+    return Math.floor(Math.random() * (upperLimit + 1 - lowerLimit)) + lowerLimit;
+}
+
+function printRandomNumber() {
+    let lowerLimit = Number(prompt(`Please enter an integer number as the lower limit of your range!`));
+    let upperLimit = Number(prompt(`Please enter an integer number as the upper limit of your range!`));
+    if (!validateIntegerInput(lowerLimit) || !validateIntegerInput(upperLimit) || upperLimit <= lowerLimit) {
+        alert('You entered an incorrect data! Please enter an integer number. The upper limit has to be higher than the lower limit.');
+        return;
+    }
+    let result = `The random number within the range of ${lowerLimit}-${upperLimit} is: ${generateRandomNumber(lowerLimit, upperLimit)}`;
+    document.getElementById(`solution-13`).innerHTML = result;
+}
+
+// Exercise 14
+function fillArray() {
+    let array = [];
+    for (let i = 0; i < 20; i++) {
+        let randomNumber = Math.floor(Math.random() * (100) + 1);
+        array.push(randomNumber);
+    }
+    let joinArray = array.join(', ');
+    return joinArray;
+}
+
+function printFillArray() {
+    let result = `The elements of the array are: ${fillArray()}.`;
+    console.log(result);
+    document.getElementById(`solution-14`).innerHTML = result;
+}
+
+// Exercise 15
+function printCustomArray() {
+    let customArray = [];
+    for (let i = 0; i < 5; i++) {
+        let requestedNumber = Number(prompt(`Please enter a number!`));
+        customArray.push(requestedNumber);
+        if (!validateInput(requestedNumber)) {
+            alert('You entered an incorrect data! Please enter a number.');
+            return;
+        };
+    };
+    let joinCustomArray = customArray.join(', ');
+    let result = `Your numbers are: ${joinCustomArray}.`;
+    console.log(result);
+    document.getElementById(`solution-15`).innerHTML = result;
 }

@@ -1,4 +1,5 @@
-.sections, .section-title {
+.sections,
+.section-title {
     max-width: 90%;
     margin: auto;
 }
@@ -12,7 +13,18 @@
     border-radius: 3rem;
     min-height: 8rem;
     margin: 1rem 0;
-    background-color: hsla(101, 34%, 52%, 0.2);
+}
+
+.color-basics-1 {
+    background-color: rgb(245, 232, 199);
+}
+
+.color-basics-2 {
+    background-color: rgb(236, 204, 178);
+}
+
+.color-basics-3 {
+    background-color: rgb(222, 182, 171);
 }
 
 @media (min-width: 576px) {
@@ -36,21 +48,41 @@
     margin: 0;
     padding: 0px 15px 0px 10px;
     text-align: left;
+    overflow: hidden;
 }
 
 .button {
     margin: auto;
-    background: linear-gradient(to bottom, hsl(101, 34%, 52%) 5%, hsl(101, 38%, 47%) 100%);
-    color: black;
+    color: hsl(0, 0%, 0%);
     font-family: Arial;
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
-    text-shadow: 2px 2px 5px hsla(102, 41%, 66%, 0.4);
-    border-radius: 12px;
-    border: 1px solid hsla(102, 41%, 66%, 0.4);
-    box-shadow: 3px 5px 6px 1px hsla(102, 41%, 66%, 0.4);
+    border-radius: 20px;
+    border: 1px solid hsla(0, 0%, 0%);
+    box-shadow: 3px 5px 6px 1px hsla(0, 0%, 0%), 0.5;
     cursor: pointer;
+}
+
+.button:hover {
+    background-color: rgba(99, 62, 77, 0.6);
+}
+
+.button:active {
+    color: hsl(0, 0%, 100%);
+    background-color: rgba(99, 62, 77, 0.6);
+}
+
+.button-basics-1 {
+    background-color: rgb(172, 112, 136, 0.6);
+}
+
+.button-basics-2 {
+    background-color: rgb(172, 112, 136, 0.75);
+}
+
+.button-basics-3 {
+    background-color: rgb(172, 112, 136, 0.9);
 }
 
 .solution-str {
