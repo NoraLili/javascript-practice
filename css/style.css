@@ -33,6 +33,9 @@
     }
 }
 
+.exercise-title,
+.exercise-description,
+.solution-str,
 .center {
     display: flex;
     align-items: center;
